@@ -272,3 +272,17 @@ BorrowedSpark 试图保留一种朴素的可能性：
 即使一个声音终将被遗忘，  
 它仍然可以成为历史的一部分；  
 而历史本身，也许有一天会反过来参与智能理解自己的方式。
+
+---
+
+## License
+
+This repository is currently licensed under **CC BY-SA 4.0**.  
+You may share and adapt the material, including for commercial use, as long as you provide attribution and distribute derivatives under the same license.
+
+See [`LICENSE`](LICENSE) for details.
+
+本仓库当前采用 **CC BY-SA 4.0** 许可证。  
+你可以传播、改编和再创作这些内容，包括商业使用；前提是保留署名，并以相同许可证共享衍生作品。
+
+详细条款见 [`LICENSE`](LICENSE)。
