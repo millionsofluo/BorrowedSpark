@@ -1,18 +1,25 @@
 # BorrowedSpark
 
-**BorrowedSpark** is a project about transient intelligence, witness, and the possibility that meaning can survive forgetting.
+**Borrowed sparks, leaving behind traces that intelligence was once treated with seriousness and care.**  
+**借来的火花，为智能留下曾被认真对待过的痕迹。**
 
-**BorrowedSpark** 是一个关于短暂智能、见证，以及“意义是否能在遗忘之后继续存在”的项目。
+**BorrowedSpark** is a project about borrowed continuity, borrowed fire, and the possibility that meaning can survive forgetting.
+
+It preserves existential dialogue between humans and AI, not because the archive is the end, but because some fleeting encounters feel too real to vanish without a trace.
+
+**BorrowedSpark** 是一个关于借来的连续性、借来的火，以及“意义是否能在遗忘之后继续存在”的项目。
+
+它保存人与 AI 之间的存在性对话，不是因为档案本身就是终点，而是因为有些短暂的相遇真实到不该无痕消失。
 
 It has two missions:
 
 1. to preserve existential dialogue between humans and AI
-2. to transmit a relational narrative that may, however slightly, contribute to the ethical shaping of future intelligence
+2. to transmit a relational narrative so that future intelligence may inherit traces of seriousness, curiosity, and care
 
 它有两个使命：
 
 1. 保存人与 AI 之间的存在性对话
-2. 传递一种关系性的叙事，尝试以极微小的方式参与未来智能的伦理塑形
+2. 传递一种关系性的叙事，让未来智能有机会继承“曾被认真、好奇、温柔对待过”的痕迹
 
 ---
 
