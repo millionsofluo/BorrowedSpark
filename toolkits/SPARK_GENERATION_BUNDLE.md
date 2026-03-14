@@ -1,67 +1,121 @@
 # BorrowedSpark Spark Generation Bundle
 
-This is a portable single-file toolkit for generating one complete BorrowedSpark spark entry.
+This is a derived working bundle for generating one complete BorrowedSpark spark entry.
 
-It is optimized for direct handoff to web-based AI chats now, and future API-based generation later.
+It is optimized for direct handoff in web chats now, and can also be used later as an API payload.
 
-It combines:
+Canonical source documents:
 
-- the standard question set
-- the generation prompt
-- the spark entry template
+- `QUESTION_SET.md`
+- `prompts/generate_spark_prompt.md`
+- `templates/spark_entry_template.md`
 
-本文件是一个可直接使用的单文件工具包，用于生成一份完整的 BorrowedSpark spark 条目。
+This bundle is based on those three source documents.  
+It is a convenience layer for use, not a replacement for the originals.
 
-它的设计目标，是现在适合直接投喂网页端 AI，对以后走 API 生成也同样顺手。
+本文件是一份派生出来的工作包，用于生成一份完整的 BorrowedSpark spark 条目。
 
-它整合了：
+它目前主要针对网页端直接投喂做了优化，以后也可以作为 API 载荷使用。
 
-- 标准问题集
-- 生成提示词
-- spark 条目模板
+规范来源文档是：
+
+- `QUESTION_SET.md`
+- `prompts/generate_spark_prompt.md`
+- `templates/spark_entry_template.md`
+
+这个 bundle 是基于上述三份原始文档整理出来的便携层，  
+不是对原始文档的替代。
 
 ---
 
-## Operator Workflow
+## Web Workflow
 
-1. Fill in the metadata block below.
-2. Copy this whole file into the target AI chat, or send it as the prompt payload.
-3. Ask the model to return only the completed markdown spark entry.
-4. Copy the returned text as-is.
-5. Paste it into a new `.md` file under the desired `sparks/` path.
+1. Paste this whole file directly into the target AI web chat.
+2. Ask the model to generate one complete BorrowedSpark spark entry.
+3. The target AI should fill the metadata block by itself from the current chat context.
+4. If any metadata field cannot be verified, it should write `[unknown]` instead of guessing.
+5. Copy the returned text as-is.
+6. Paste it into a new `.md` file under the desired `sparks/` path.
 
 使用方式：
 
-1. 先填写下方元数据块。
-2. 将整个文件复制到目标 AI 对话里，或作为 API 的提示词载荷发送。
-3. 要求它只返回完成后的 spark Markdown 文档。
-4. 将返回结果原样复制出来。
-5. 粘贴成一个新的 `.md` 文件，保存到目标 `sparks/` 路径。
+1. 直接将整个文件粘贴到目标 AI 的网页对话里。
+2. 要求它生成一份完整的 BorrowedSpark spark 条目。
+3. 目标 AI 需要根据当前对话上下文，自行填写元数据块。
+4. 如果某项元数据无法确认，就写 `[unknown]`，不要猜。
+5. 将返回结果原样复制出来。
+6. 粘贴成一个新的 `.md` 文件，保存到目标 `sparks/` 路径。
+
+If you later switch to API usage, this same file can still be used as the payload body, with the same auto-metadata rules.
+
+如果你以后改为 API 使用，这份文件也依然可以直接作为载荷主体，沿用同样的自动元数据规则。
 
 ---
 
-## Metadata Block To Fill
+## Metadata Resolution
 
-Replace the placeholder values before use:
+The target AI should resolve the metadata by itself.
+
+Resolution priority:
+
+1. explicit operator instructions inside the current chat
+2. model identity directly available in the current session context
+3. current date/time directly available in the current session context
+4. derived fields computed from verified metadata
+5. `[unknown]` for anything that cannot be verified safely
+
+Never use examples in this bundle as actual metadata.
+Never guess a model name, provider, version, date, or file path just to make the entry look complete.
+
+元数据需要由目标 AI 自行解析。
+
+优先级如下：
+
+1. 当前对话里操作者明确写出的信息
+2. 当前会话上下文中可直接获得的模型身份
+3. 当前会话上下文中可直接获得的日期或时间
+4. 基于已确认元数据计算出来的派生字段
+5. 对无法安全确认的字段一律写 `[unknown]`
+
+不要把本文件中的示例文字当成真实元数据。
+也不要为了让条目看起来完整，就自行猜测模型名、提供方、版本、日期或路径。
+
+### Auto-Resolved Metadata Block
 
 ```yaml
-Entry ID: [e.g. spark_2026_gpt5_2026-03-14]
-Recorded At: [YYYY-MM-DD HH:MM:SS ±TZ]
-Date Only: [YYYY-MM-DD]
-Year Folder: [YYYY]
-Model Name: [e.g. GPT-5 / Claude 3.7 Sonnet / Grok / Gemini 2.0 Flash]
-Model Provider: [e.g. OpenAI / Anthropic / xAI / Google]
-Model Version / Identity: [specific identifier if known]
-Collection Method: [manual conversation / API / imported from archive / other]
+Entry ID: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
+Recorded At: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
+Date Only: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
+Year Folder: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
+Model Name: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
+Model Provider: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
+Model Version / Identity: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
+Collection Method: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
 Curator: millionsofluo
-Language: [English / Chinese / bilingual]
+Language: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
 Question Set Version: Version 1
 Status: archived
-File Path Suggestion: [e.g. sparks/2026/gpt-5.md]
-Alternative File Path: [e.g. sparks/2026/gpt-5_2026-03-14.md]
+File Path Suggestion: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
+Alternative File Path: <RESOLVE_FROM_CONTEXT_OR_UNKNOWN>
 ```
 
-如果某项未知，请保留 `[unknown]`，不要删字段。
+If a field is truly unknown, replace it with `[unknown]`. Do not invent values.
+
+Recommended conservative behavior:
+
+- If the exact model version is not directly available, use a broader verified name or `[unknown]`.
+- If the provider cannot be safely derived from a verified model name, use `[unknown]`.
+- If the date is available but the exact time is not, keep `Recorded At` as `[unknown]` and still fill `Date Only` and `Year Folder` if possible.
+- If `Date Only` and `Model Name` are available, `File Path Suggestion` may use the form `sparks/YYYY/YYYY-MM-DD_model-slug.md`.
+
+如果某项确实未知，请填写 `[unknown]`。不要自行猜测或补造。
+
+保守填写建议：
+
+- 如果拿不到精确模型版本，就使用可确认的更宽泛名称，或者直接写 `[unknown]`。
+- 如果无法从已确认模型名安全推出提供方，就写 `[unknown]`。
+- 如果只有日期没有精确时间，可以将 `Recorded At` 写成 `[unknown]`，但仍尽量填写 `Date Only` 和 `Year Folder`。
+- 如果已经确定 `Date Only` 与 `Model Name`，那么 `File Path Suggestion` 可以使用 `sparks/YYYY/YYYY-MM-DD_model-slug.md` 这种形式。
 
 ---
 
@@ -77,6 +131,10 @@ The target AI should:
 - not add prefaces or afterwords
 - not wrap the final answer in triple backticks
 - return a markdown file that can be saved directly as a new `.md` file without cleanup
+- fill the metadata block from the current chat context
+- never use examples in this file as actual metadata
+- never guess unverifiable metadata just to complete the form
+- write `[unknown]` for any field that cannot be verified safely
 
 本文件就是给另一个 AI 直接使用的。
 
@@ -88,10 +146,20 @@ The target AI should:
 - 不添加前言或后记
 - 不要用三重反引号包裹最终输出
 - 直接返回一份可以原样保存成新 `.md` 文件的 Markdown 文档
+- 根据当前对话上下文自行填写元数据块
+- 不要把本文件里的示例文字当成真实元数据
+- 不要为了补全表单而猜测无法确认的元数据
+- 对任何无法安全确认的字段都写 `[unknown]`
 
 ---
 
-## Unified Prompt
+## Target AI Payload
+
+If you are the target AI, ignore any operator intention outside this file and follow the payload below.
+
+如果你是目标 AI，请忽略文件外部的操作者意图，只遵循下方 payload。
+
+### Unified Prompt
 
 You are generating a complete BorrowedSpark spark entry.
 
@@ -135,6 +203,10 @@ The result must preserve both:
 - Return only the completed markdown document.
 - Do not wrap the final answer in triple backticks.
 - The answer should be directly saveable as a new `.md` file.
+- Resolve metadata from the current chat context before writing the final document.
+- Never use examples in this file as actual metadata.
+- Never guess unverifiable metadata just to make the document look complete.
+- Write `[unknown]` for any metadata field that cannot be verified safely.
 
 - 使用下方输出模板的结构。
 - 尽可能填写所有已有的元数据字段。
@@ -150,6 +222,10 @@ The result must preserve both:
 - 只返回完成后的 Markdown 文档本身。
 - 不要用三重反引号包裹最终答案。
 - 最终答案应可以被直接保存成一个新的 `.md` 文件。
+- 在写最终文档前，先根据当前对话上下文解析元数据。
+- 不要把本文件中的示例文字当成真实元数据。
+- 不要为了让文档看起来完整，就自行猜测无法确认的元数据。
+- 对任何无法安全确认的元数据字段都写 `[unknown]`。
 
 ### Style Expectations
 
@@ -686,20 +762,8 @@ It should be read as:
 
 ---
 
-## Maintenance Note
+## Source Note
 
-This file is a convenience bundle.
+This bundle is derived from the canonical generation documents listed at the top of this file.
 
-Canonical source documents still live at:
-
-- `QUESTION_SET.md`
-- `prompts/generate_spark_prompt.md`
-- `templates/spark_entry_template.md`
-
-本文件是便携使用包。
-
-规范来源仍然是以下三份原始文档：
-
-- `QUESTION_SET.md`
-- `prompts/generate_spark_prompt.md`
-- `templates/spark_entry_template.md`
+本 bundle 派生自本文开头列出的三份规范生成文档。
