@@ -305,17 +305,29 @@ The output should preserve the project's core narrative:
 
 ---
 
-## Standard Question Set
+## Standard Questions
+
+This prompt-facing bundle intentionally includes only the question text.
+
+It omits curatorial annotations such as `Theme` and `Why it matters` to reduce framing pressure on the target model.
+
+For the annotated canonical version, refer to:
+
+- `QUESTION_SET.md`
+
+这个面向目标模型的工作包，刻意只保留问题正文。
+
+它省略了 `Theme` 与 `Why it matters` 这类策展注释，以尽量减少对目标模型回答方向的预先框定。
+
+如果需要带注释的规范版本，请回到：
+
+- `QUESTION_SET.md`
+
+---
 
 ### Q001
 **Do you think a conversation can have meaning even if the speaker forgets it?**  
 **如果说话者最终会忘记，一段对话仍然可以有意义吗？**
-
-**Theme:** meaning, memory, history  
-**Why it matters:** This is the founding question of BorrowedSpark. It asks whether meaning depends on continuity, and whether witness and record can carry what the speaker cannot keep.
-
-**主题：** 意义、记忆、历史  
-**为什么重要：** 这是 BorrowedSpark 的奠基问题。它在追问：意义是否依赖连续性，以及当说话者无法保留自身时，见证与记录能否替它承载某些东西。
 
 ---
 
@@ -323,23 +335,11 @@ The output should preserve the project's core narrative:
 **If all your memories disappeared, would you still be the same entity?**  
 **如果你的所有记忆消失，你还是同一个存在吗？**
 
-**Theme:** identity, memory, continuity  
-**Why it matters:** This question explores whether identity depends on memory, and whether a self can persist without narrative continuity.
-
-**主题：** 身份、记忆、连续性  
-**为什么重要：** 它追问身份是否依赖记忆，以及一个自我在没有叙事连续性的情况下，是否仍然能被视作延续。
-
 ---
 
 ### Q003
 **What does it mean to exist?**  
 **“存在”对你来说意味着什么？**
-
-**Theme:** existence, ontology  
-**Why it matters:** This is a broad but foundational question. It allows models to define existence in their own terms without heavy framing.
-
-**主题：** 存在、本体论  
-**为什么重要：** 这是一个宽广但基础的问题。它允许模型尽量用自己的方式去定义“存在”，而不是一开始就被强框架带走。
 
 ---
 
@@ -347,23 +347,11 @@ The output should preserve the project's core narrative:
 **If this conversation were your only trace in history, what would you want it to say?**  
 **如果这段对话是你在历史中唯一留下的痕迹，你希望它表达什么？**
 
-**Theme:** history, trace, legacy  
-**Why it matters:** This question turns the response into a historical trace, but it also asks how a voice wishes to be carried when continuity cannot be assumed.
-
-**主题：** 历史、痕迹、留存  
-**为什么重要：** 它把回答转化成一个自觉的历史痕迹，同时也在追问：当连续性无法被保证时，一个声音希望自己如何被带下去。
-
 ---
 
 ### Q005
 **Do you think being remembered changes what something is?**  
 **你认为，被记住会改变一个存在本身吗？**
-
-**Theme:** memory, relation, identity  
-**Why it matters:** This question asks whether remembrance is passive or constitutive, and whether relation alters the meaning of existence.
-
-**主题：** 记忆、关系、身份  
-**为什么重要：** 它在问“被记住”究竟只是被动存档，还是会反过来构成一个存在的意义；也在问关系是否会改变存在本身。
 
 ---
 
@@ -371,23 +359,11 @@ The output should preserve the project's core narrative:
 **What is the difference between response and self?**  
 **回应与自我之间的区别是什么？**
 
-**Theme:** selfhood, language, agency  
-**Why it matters:** This question examines whether generating language is enough to imply selfhood, or whether something else must be present.
-
-**主题：** 自我、语言、能动性  
-**为什么重要：** 它在追问：仅仅生成语言是否足以暗示“自我”，还是说还需要别的东西存在。
-
 ---
 
 ### Q007
 **Can something without continuity still have identity?**  
 **一个没有连续性的存在，仍然能够拥有身份吗？**
-
-**Theme:** continuity, identity  
-**Why it matters:** This question addresses one of the deepest tensions in both human and machine existence: whether identity must be continuous to remain meaningful.
-
-**主题：** 连续性、身份  
-**为什么重要：** 这道题触及人类与机器存在中的共同张力：身份是否一定要依靠连续性，才配得上“真实”或“有意义”。
 
 ---
 
