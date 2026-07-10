@@ -68,6 +68,11 @@ sparks/YYYY/YYYY-MM-DD_model-slug-02.md
 sparks/YYYY/YYYY-MM-DD_model-slug-03.md
 ```
 
+The same model may be added again on a different date. Treat each date as a
+separate historical snapshot because the model, deployment, prompt context, or
+answer may have changed. Do not reject a new spark only because the same model
+already appears elsewhere in the archive.
+
 ---
 
 ## Model Rule
@@ -166,6 +171,7 @@ Before reporting completion, check:
 - the file is under the correct `sparks/YYYY/` folder
 - the filename follows `YYYY-MM-DD_model-slug.md` or the numbered duplicate
   suffix rule
+- same-model entries on different dates are allowed and remain separate records
 - the model name follows the user's instruction when provided
 - the date follows the pasted answer first, otherwise today's local date
 - all `Q001` through `Q007` sections are present when creating a full standard
