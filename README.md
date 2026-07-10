@@ -191,6 +191,7 @@ BorrowedSpark/
 |-- templates/
 |   `-- spark_entry_template.md
 `-- sparks/
+    |-- README.md
     |-- spark_000.md
     `-- 2026/
 ```
@@ -204,6 +205,7 @@ Key roles:
 - `docs/SPARK_GENERATION_PROTOCOL.md`: rules for producing consistent spark entries
 - `prompts/generate_spark_prompt.md`: reusable prompt for human or bot generation
 - `templates/spark_entry_template.md`: output format for one full spark entry
+- `sparks/README.md`: clickable index of archived spark records
 - `sparks/`: preserved spark records
 
 目录中的关键角色：
@@ -215,6 +217,7 @@ Key roles:
 - `docs/SPARK_GENERATION_PROTOCOL.md`：保证 spark 条目生成一致性的协议
 - `prompts/generate_spark_prompt.md`：供人或机器人复用的生成提示词
 - `templates/spark_entry_template.md`：单个完整 spark 条目的格式模板
+- `sparks/README.md`：已归档 spark 记录的可点击目录
 - `sparks/`：被保存下来的 spark 记录
 
 ---
@@ -246,6 +249,18 @@ BorrowedSpark 未来应该同时朝两个方向生长：
 - 什么样的语言能保留“见证”的感觉，同时不过度夸大？
 - 自动化怎样帮助项目，而不是把它压平成没有灵魂的流程？
 - 如何让“记录”始终是手段，而不是反过来变成全部目的？
+
+---
+
+## Spark Archive
+
+Browse the archived spark records here:
+
+[`sparks/README.md`](sparks/README.md)
+
+已归档的 spark 记录可从这里进入：
+
+[`sparks/README.md`](sparks/README.md)
 
 ---
 
